@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- builder service -->
+        <service id="gremo_captcha.gregwar_builder" class="Gregwar\Captcha\CaptchaBuilder" public="false" />
+
+        <!-- form -->
+        <service id="gremo_captcha.form.type.gregwar_captcha" class="Gremo\CaptchaFormBundle\Form\Type\GregwarCaptchaType">
+            <tag name="form.type" alias="gremo_captcha_gregwar" />
+            <tag name="captcha_form.type" adapter="gregwar_captcha" />
+            <argument type="service" id="session" />
+            <argument type="service" id="gremo_captcha.gregwar_builder" />
+            <argument type="collection" /><!-- configuration -->
+        </service>
+    </services>
+
+</container>

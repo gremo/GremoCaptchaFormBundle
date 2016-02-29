@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- form -->
+        <service id="gremo_captcha.form.type.honeypot" class="Gremo\CaptchaFormBundle\Form\Type\HoneypotType">
+            <tag name="form.type" alias="gremo_captcha_honeypot" />
+            <tag name="captcha_form.type" adapter="honeypot" />
+            <argument type="collection" /><!-- configuration -->
+        </service>
+    </services>
+
+</container>

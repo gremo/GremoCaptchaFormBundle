@@ -1,0 +1,30 @@
+{% block gremo_captcha_recaptcha_widget -%}
+    {% set attr = {'data-sitekey': key} %}
+    {% if theme is not null %}
+        {% set attr = attr|merge({'data-theme': theme}) %}
+    {% endif %}
+    {% if type is not null %}
+        {% set attr = attr|merge({'data-type': type}) %}
+    {% endif %}
+    {% if size is not null %}
+        {% set attr = attr|merge({'data-size': size}) %}
+    {% endif %}
+    {% if tabindex is not null %}
+        {% set attr = attr|merge({'data-tabindex': tabindex}) %}
+    {% endif %}
+    {% if callback is null %}
+        {% set attr = attr|merge({'data-callback': callback}) %}
+    {% endif %}
+    {% if expired_callback is not null %}
+        {% set attr = attr|merge({'data-expired-callback': expired_callback}) %}
+    {% endif %}
+
+    <div class="g-recaptcha"{% for attrname, attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}></div>
+{%- endblock %}
+
+{% block gremo_captcha_gregwar_widget -%}
+    <div>
+        <img src="{{ quality is not null ? builder.inline(quality) : builder.inline() }}" alt="" />
+    </div>
+    {{ form_widget(form) }}
+{%- endblock %}

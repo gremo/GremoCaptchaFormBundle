@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- recaptcha service -->
+        <service id="gremo_captcha.recaptcha" class="ReCaptcha\ReCaptcha" public="false">
+            <argument /><!-- secret from configuration -->
+        </service>
+
+        <!-- recaptcha validator -->
+        <service id="gremo_captcha.recaptcha.validator" class="Gremo\CaptchaFormBundle\Validator\Constraints\RecaptchaChallengeValidator">
+            <tag name="validator.constraint_validator" alias="gremo_captcha_recaptcha_validator" />
+            <argument type="service" id="gremo_captcha.recaptcha" />
+        </service>
+
+        <!-- form -->
+        <service id="gremo_captcha.form.type.recaptcha_type" class="Gremo\CaptchaFormBundle\Form\Type\RecaptchaType">
+            <tag name="form.type" alias="gremo_captcha_recaptcha" />
+            <tag name="captcha_form.type" adapter="recaptcha" />
+            <argument type="service" id="request_stack" />
+            <argument type="collection" /><!-- configuration -->
+        </service>
+    </services>
+
+</container>

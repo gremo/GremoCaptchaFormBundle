@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="gremo_captcha.adapter_factory.recaptcha" class="Gremo\CaptchaFormBundle\DependencyInjection\Factory\Adapter\RecaptchaAdapter">
+            <tag name="gremo_captcha.adapter_factory" />
+        </service>
+
+        <service id="gremo_captcha.adapter_factory.honeypot" class="Gremo\CaptchaFormBundle\DependencyInjection\Factory\Adapter\HoneypotAdapter">
+            <tag name="gremo_captcha.adapter_factory" />
+        </service>
+
+        <service id="gremo_captcha.adapter_factory.gregwar_captcha" class="Gremo\CaptchaFormBundle\DependencyInjection\Factory\Adapter\GregwarCaptchaAdapter">
+            <tag name="gremo_captcha.adapter_factory" />
+        </service>
+    </services>
+</container>

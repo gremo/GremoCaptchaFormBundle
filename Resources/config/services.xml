@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- form -->
+        <service id="gremo_captcha.captcha_form_type" class="Gremo\CaptchaFormBundle\Form\Type\CaptchaType">
+            <tag name="form.type" alias="gremo_captcha" />
+            <argument /><!-- default adapter form from configuration -->
+        </service>
+
+        <!-- stored captcha validator -->
+        <service id="gremo_captcha.validator.stored_captcha" class="Gremo\CaptchaFormBundle\Validator\Constraints\StoredCaptchaValidator">
+            <tag name="validator.constraint_validator" alias="gremo_captcha_validator_stored_captcha" />
+            <argument type="service" id="session" />
+        </service>
+    </services>
+</container>
