@@ -1,7 +1,7 @@
 # GremoCaptchaFormBundle
 [![Latest stable](https://img.shields.io/packagist/v/gremo/captcha-form-bundle.svg?style=flat-square)](https://packagist.org/packages/gremo/captcha-form-bundle) [![Downloads total](https://img.shields.io/packagist/dt/gremo/captcha-form-bundle.svg?style=flat-square)](https://packagist.org/packages/gremo/captcha-form-bundle)
 
-Symfony 2 bundle that provides CAPTCHA form field to solve challenge-response tests. Supports multiple adapters as well as 
+Symfony bundle that provides CAPTCHA form field to solve challenge-response tests. Supports multiple adapters as well as 
 custom ones. Built-in adapter for:
 
 - [Google reCAPTCHA](https://www.google.com/recaptcha)

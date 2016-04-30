@@ -1,7 +1,7 @@
 {
   "name": "gremo/captcha-form-bundle",
   "type": "symfony-bundle",
-  "description": "Symfony 2 bundle that provides CAPTCHA form field and supports multiple adapters.",
+  "description": "Symfony bundle that provides CAPTCHA form field and supports multiple adapters.",
   "keywords": ["captcha", "spam", "bot", "recaptcha"],
   "license": "MIT",
   "authors": [
