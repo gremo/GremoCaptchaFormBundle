@@ -42,9 +42,9 @@ class HoneypotAdapter implements AdapterFactoryInterface
                     ->validate()
                         ->ifNotInArray($types = array_merge(self::$typesMap, array_keys(self::$typesMap)))
                         ->thenInvalid(
-                            '%s type is not allowed (allowed: '.
-                            implode(', ', array_map(function ($t) { return '"'.$t.'"'; }, $types)).
-                            ').'
+                            '%s type is not allowed (allowed: '.implode(', ', array_map(function ($t) {
+                                return '"'.$t.'"';
+                            }, $types)).').'
                         )
                     ->end()
                     ->isRequired()

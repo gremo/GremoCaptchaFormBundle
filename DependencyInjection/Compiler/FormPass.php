@@ -34,14 +34,16 @@ class FormPass implements CompilerPassInterface
 
             $class = $container->getParameterBag()->resolveValue($definition->getClass());
             if (!is_a($class, $interface = 'Symfony\Component\Form\FormTypeInterface', true)) {
-                throw new \InvalidArgumentException(sprintf(
-                    'The service "%s" tagged as a captcha_form.type must implement %s.', $id, $interface
-                ));
+                throw new \InvalidArgumentException(
+                    sprintf('The service "%s" tagged as a captcha_form.type must implement %s.', $id, $interface)
+                );
             }
 
             $attributes = call_user_func_array('array_merge', $attributes);
             if (!isset($attributes['adapter'])) {
-                throw new \InvalidArgumentException(sprintf('The service "%s" must specify the adapter attribute.', $id));
+                throw new \InvalidArgumentException(
+                    sprintf('The service "%s" must specify the adapter attribute.', $id)
+                );
             }
 
             $formsMap[$attributes['adapter']] = $id;

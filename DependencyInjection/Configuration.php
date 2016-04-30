@@ -42,7 +42,9 @@ class Configuration implements ConfigurationInterface
         $adaptersNode = $rootNode
             ->fixXmlConfig('adapter', 'adapters')
             ->validate()
-                ->ifTrue(function ($v) { return !array_key_exists('adapters', $v) || !count($v['adapters']); })
+                ->ifTrue(function ($v) {
+                    return !array_key_exists('adapters', $v) || !count($v['adapters']);
+                })
                 ->thenInvalid('you need to configure at least one adapter.')
             ->end()
             ->beforeNormalization()
@@ -66,8 +68,9 @@ class Configuration implements ConfigurationInterface
                         ->ifNotInArray($availableAdapters)
                         ->thenInvalid(
                             '%s is not a valid adapter key (available adapter keys: '.
-                            implode(', ', array_map(function ($s) { return '"'.$s.'"'; }, $availableAdapters)).
-                            ').'
+                            implode(', ', array_map(function ($s) {
+                                return '"'.$s.'"';
+                            }, $availableAdapters)).').'
                         )
                     ->end()
                 ->end()

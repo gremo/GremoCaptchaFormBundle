@@ -57,7 +57,7 @@ class GregwarCaptchaType extends AbstractType
     {
         // Configure the captcha builder
         $captchaBuilder = $this->captchaBuilder;
-        foreach(array('distorsion', 'interpolation', 'ignore_all_effects') as $option) {
+        foreach (array('distorsion', 'interpolation', 'ignore_all_effects') as $option) {
             if (null !== $value = $options[$option]) {
                 $setter = 'set'.implode(null, array_map('ucfirst', explode('_', $option)));
                 if (method_exists($captchaBuilder, $setter)) {

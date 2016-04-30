@@ -62,7 +62,7 @@ class RecaptchaAdapter implements AdapterFactoryInterface
      */
     public function create(ContainerBuilder $container, $key, array $config)
     {
-        $container->setParameter('gremo_captcha.recaptcha.key',    $config['key']);
+        $container->setParameter('gremo_captcha.recaptcha.key', $config['key']);
         $container->setParameter('gremo_captcha.recaptcha.secret', $config['secret']);
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../../../Resources/config'));
