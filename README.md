@@ -109,13 +109,13 @@ adapters:
         key:              ~ # string
         secret:           ~ # string        
 
-		# Not mandatory options
+        # Not mandatory options
         theme:            ~ # string
         type:             ~ # string
         size:             ~ # string
         tabindex:         ~ # integer
-		callback:         ~ # string
-		expired_callback: ~ # string
+        callback:         ~ # string
+        expired_callback: ~ # string
 ```
 
 > **Tip**: add the `hl` parameter to the script in order to localize the CAPTCHA, i.e. in Twig `<script src="https://www.google.com/recaptcha/api.js?hl={{ app.request.locale }}" async defer></script>`
@@ -161,16 +161,16 @@ The run `composer update`. Available configuration ([options explanation](https:
 adapters:
     # ...
     gregwar_captcha:
-		# Not mandatory options
+        # Not mandatory options
         storage_key:        _gregwar_captcha
         width:              ~ # integer
         height:             ~ # integer
         quality:            ~ # integer
         font:               ~ # string
-		distorsion:         ~ # boolean
-		interpolation:      ~ # boolean
-		ignore_all_effects: ~ # boolean
-		orc:                ~ # boolean
+        distorsion:         ~ # boolean
+        interpolation:      ~ # boolean
+        ignore_all_effects: ~ # boolean
+        orc:                ~ # boolean
 ```
 
 Example usage:
@@ -204,9 +204,8 @@ Available configuration:
 adapters:
     # ...
     honeypot:
-		# Mandatory options
+        # Mandatory options
         type: ~ # string, "text" or "hidden" or their FQCN (Symfony >= 2.7)
-
 ```
 
 Example usage:
