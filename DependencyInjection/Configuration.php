@@ -34,7 +34,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('gremo_captcha_form', 'array');
 
-        $availableAdapters = [];
+        $availableAdapters = array();
         foreach ($this->adapterFactories as $factory) {
             $availableAdapters[] = $factory->getKey();
         }

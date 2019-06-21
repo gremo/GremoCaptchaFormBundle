@@ -53,7 +53,7 @@ class GremoCaptchaFormExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('factories.xml');
 
-        $factories = [];
+        $factories = array();
         foreach (array_keys($container->findTaggedServiceIds('gremo_captcha.adapter_factory')) as $id) {
             $factory = $container->get($id);
             $factories[str_replace('-', '_', $factory->getKey())] = $factory;

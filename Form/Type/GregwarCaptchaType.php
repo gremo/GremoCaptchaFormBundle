@@ -107,7 +107,7 @@ class GregwarCaptchaType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver
-            ->setDefaults([
+            ->setDefaults(array(
                 // Form options
                 'label' => 'CAPTCHA test',
                 'mapped' => false,
@@ -130,7 +130,7 @@ class GregwarCaptchaType extends AbstractType
                 'interpolation' => $this->config['interpolation'],
                 'ignore_all_effects' => $this->config['ignore_all_effects'],
                 'ocr' => $this->config['ocr'],
-            ]);
+            ));
     }
 
     /**
