@@ -49,7 +49,7 @@ class Configuration implements ConfigurationInterface
             ->end()
             ->beforeNormalization()
             ->always(function ($v) {
-                if (!isset($v['default_adapter'])) {
+                if (!isset($v['default_adapter']) && isset($v['adapters'])) {
                     $v['default_adapter'] = key($v['adapters']);
                 }
 
