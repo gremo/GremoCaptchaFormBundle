@@ -12,7 +12,7 @@
     {% if tabindex is not null %}
         {% set attr = attr|merge({'data-tabindex': tabindex}) %}
     {% endif %}
-    {% if callback is null %}
+    {% if callback is not null %}
         {% set attr = attr|merge({'data-callback': callback}) %}
     {% endif %}
     {% if expired_callback is not null %}
