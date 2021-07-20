@@ -53,7 +53,7 @@ class CaptchaType extends AbstractType
      */
     public function getParent()
     {
-        if (version_compare(Kernel::VERSION, '2.8', '<')) {
+        if (version_compare(Kernel::VERSION, '2.7', '<=')) {
             return $this->adapterForm->getName();
         }
 

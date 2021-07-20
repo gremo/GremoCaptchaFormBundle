@@ -154,7 +154,7 @@ class GregwarCaptchaType extends AbstractType
      */
     public function getParent()
     {
-        if (version_compare(Kernel::VERSION, '2.7', '<')) {
+        if (version_compare(Kernel::VERSION, '2.7', '<=')) {
             return 'text';
         }
 

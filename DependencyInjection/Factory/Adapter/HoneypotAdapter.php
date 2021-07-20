@@ -58,7 +58,7 @@ class HoneypotAdapter implements AdapterFactoryInterface
      */
     public function create(ContainerBuilder $container, $key, array $config)
     {
-        if (version_compare(Kernel::VERSION, '2.7', '>=')) {
+        if (version_compare(Kernel::VERSION, '2.8', '>=')) {
             // Use the FQCN if type name is provided
             if (array_key_exists($config['type'], self::$typesMap)) {
                 $config['type'] = self::$typesMap[$config['type']];
