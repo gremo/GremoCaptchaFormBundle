@@ -18,11 +18,14 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "~2.4|~3.0|~4.0"
+        "symfony/framework-bundle": "^2.4 || ^3.0 || ^4.0"
     },
     "require-dev": {
-        "google/recaptcha": "~1.1",
-        "gregwar/captcha": "~1.1"
+        "google/recaptcha": "^1.1",
+        "gregwar/captcha": "^1.1",
+        "symfony/form": "^2.4 || ^3.0|| ^4.0",
+        "symfony/options-resolver": "^2.4 || ^3.0|| ^4.0",
+        "symfony/validator": "^2.4 || ^3.0|| ^4.0"
     },
     "suggest": {
         "google/recaptcha": "Allows you to use Google reCAPTCHA adapter",
