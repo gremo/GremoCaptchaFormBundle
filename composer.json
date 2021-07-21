@@ -9,7 +9,7 @@
     "recaptcha",
     "spam"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "authors": [
     {
       "name": "Marco Polichetti",
