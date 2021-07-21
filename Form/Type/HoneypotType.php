@@ -36,7 +36,6 @@ class HoneypotType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        /** @noinspection PhpParamsInspection */
         $this->configureOptions($resolver);
     }
 

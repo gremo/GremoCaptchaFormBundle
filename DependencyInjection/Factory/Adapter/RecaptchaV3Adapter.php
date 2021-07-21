@@ -27,7 +27,6 @@ class RecaptchaV3Adapter implements AdapterFactoryInterface
      */
     public function addConfiguration(ArrayNodeDefinition $builder)
     {
-        /** @noinspection PhpUndefinedMethodInspection */
         $builder
             ->validate()
                 ->ifTrue(function () {

@@ -49,7 +49,6 @@ class RecaptchaV3Type extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        /** @noinspection PhpParamsInspection */
         $this->configureOptions($resolver);
     }
 
