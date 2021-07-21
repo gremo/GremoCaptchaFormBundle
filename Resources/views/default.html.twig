@@ -28,3 +28,17 @@
     </div>
     {{ form_widget(form) }}
 {%- endblock %}
+
+{% block gremo_captcha_recaptcha_v3_widget -%}
+    <script src="https://www.google.com/recaptcha/api.js?render={{ key }}&hl={{ app.request.locale }}"></script>
+    <script>
+      grecaptcha.ready(function () {
+        grecaptcha.execute('{{ key }}', { action: 'submit' }).then(function (token) {
+          var recaptchaResponse = document.getElementById('{{ id }}');
+          recaptchaResponse.value = token;
+        });
+      });
+    </script>
+
+    {{ form_widget(form) }}
+{%- endblock %}

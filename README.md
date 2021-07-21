@@ -6,6 +6,7 @@ Symfony bundle that provides CAPTCHA form field to solve challenge-response test
 custom ones. Built-in adapter for:
 
 - [Google reCAPTCHA](https://www.google.com/recaptcha)
+- [Google reCAPTCHA v3](https://developers.google.com/recaptcha/docs/v3)
 - [Gregwar/Captcha](https://github.com/Gregwar/Captcha)
 - [Honeypot captcha technique](http://haacked.com/archive/2007/09/11/honeypot-captcha.aspx/)
 
@@ -150,6 +151,54 @@ $builder->add('captcha', 'Gremo\CaptchaFormBundle\Form\Type\RecaptchaType', [
 // For Symfony < 2.8
 $builder->add('captcha', 'gremo_captcha_recaptcha', [
     // Pass custom options to override defaults from configuration
+]);
+```
+
+### Google reCAPTCHA v3 adapter
+
+**Adapter key**: `recaptcha_v3` **Form Type**: `Gremo\CaptchaFormBundle\Form\Type\RecaptchaV3Type`
+
+Add the `google/recaptcha` library to your project:
+
+```bash
+composer require google/recaptcha^1
+```
+
+Configure the adapter ([options explanation](https://developers.google.com/recaptcha/docs/v3#interpreting_the_score)):
+
+```yml
+# ...
+adapters:
+    # ...
+    recaptcha_v3:
+        # Mandatory options
+        key:              ~ # string
+        secret:           ~ # string
+
+        # Not mandatory options
+        score_threshold:  ~ # float
+```
+
+There is no need to add any `<script>` tag because the form theme will do it for you.
+
+Example usage:
+
+```php
+// For Symfony >= 2.8 and PHP >= 5.5 use the class name resolution via ::class
+use Gremo\CaptchaFormBundle\Form\Type\RecaptchaV3Type;
+
+$builder->add('captcha', RecaptchaV3Type::class, [
+    // For options
+]);
+
+// For Symfony >= 2.8 and PHP < 5.5 use the fully-qualified class name as string
+$builder->add('captcha', 'Gremo\CaptchaFormBundle\Form\Type\RecaptchaV3Type', [
+    // For options
+]);
+
+// For Symfony < 2.8
+$builder->add('captcha', 'gremo_captcha_recaptcha_v3', [
+    // For options
 ]);
 ```
 

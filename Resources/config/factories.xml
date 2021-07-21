@@ -8,6 +8,10 @@
             <tag name="gremo_captcha.adapter_factory" />
         </service>
 
+        <service id="gremo_captcha.adapter_factory.recaptcha_v3" class="Gremo\CaptchaFormBundle\DependencyInjection\Factory\Adapter\RecaptchaV3Adapter">
+            <tag name="gremo_captcha.adapter_factory" />
+        </service>
+
         <service id="gremo_captcha.adapter_factory.honeypot" class="Gremo\CaptchaFormBundle\DependencyInjection\Factory\Adapter\HoneypotAdapter">
             <tag name="gremo_captcha.adapter_factory" />
         </service>
