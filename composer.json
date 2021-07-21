@@ -1,34 +1,36 @@
 {
-  "name": "gremo/captcha-form-bundle",
-  "type": "symfony-bundle",
-  "description": "Symfony bundle that provides CAPTCHA form field and supports multiple adapters.",
-  "keywords": [
-    "abuse",
-    "bot",
-    "captcha",
-    "recaptcha",
-    "spam"
-  ],
-  "license": "ISC",
-  "authors": [
-    {
-      "name": "Marco Polichetti",
-      "email": "gremo1982@gmail.com"
+    "name": "gremo/captcha-form-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony bundle that provides CAPTCHA form field and supports multiple adapters.",
+    "keywords": [
+        "abuse",
+        "bot",
+        "captcha",
+        "recaptcha",
+        "spam"
+    ],
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Marco Polichetti",
+            "email": "gremo1982@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.4|~3.0|~4.0"
+    },
+    "require-dev": {
+        "google/recaptcha": "~1.1",
+        "gregwar/captcha": "~1.1"
+    },
+    "suggest": {
+        "google/recaptcha": "Allows you to use Google reCAPTCHA adapter",
+        "gregwar/captcha": "Allows you to use Gregwar/Captcha adapter"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gremo\\CaptchaFormBundle\\": ""
+        }
     }
-  ],
-  "require": {
-    "php": ">=5.3.3",
-    "symfony/framework-bundle": "~2.4|~3.0|~4.0"
-  },
-  "require-dev": {
-    "google/recaptcha": "~1.1",
-    "gregwar/captcha": "~1.1"
-  },
-  "suggest": {
-    "google/recaptcha": "Allows you to use Google reCAPTCHA adapter",
-    "gregwar/captcha": "Allows you to use Gregwar/Captcha adapter"
-  },
-  "autoload": {
-    "psr-4": { "Gremo\\CaptchaFormBundle\\": "" }
-  }
 }
