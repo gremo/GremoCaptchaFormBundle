@@ -42,6 +42,8 @@ class RecaptchaV3Type extends AbstractType
         foreach ($this->config as $key => $value) {
             $view->vars[$key] = $value;
         }
+
+		$view->vars['attr']['data-key'] = $this->config['key'];
     }
 
     /**
